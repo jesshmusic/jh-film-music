@@ -9,12 +9,5 @@
 @import "./bootstrap/grid";
 @import "./bootstrap/utilities";
 
-.container {
-  @extend .px-3;
-  @extend .pt-4;
-  @extend .pb-6;
-  @extend .shadow-lg;
 
-  background-color: darken($body-bg, 20%);
-}
 
