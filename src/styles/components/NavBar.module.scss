@@ -1,0 +1,12 @@
+@import '../base';
+
+.navbarContainer {
+  @extend .bg-dark;
+  @extend .border-bottom;
+  @extend .px-3;
+  @extend .py-2;
+}
+
+.navbarMain {
+
+}

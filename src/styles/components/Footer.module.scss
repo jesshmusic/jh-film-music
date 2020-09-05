@@ -1,0 +1,8 @@
+@import '../base';
+
+.footer {
+  @extend .bg-primary-dark;
+  @extend .border-top;
+  @extend .container-fluid;
+  @extend .py-5;
+}
