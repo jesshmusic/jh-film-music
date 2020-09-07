@@ -1,0 +1,29 @@
+@import "../styles/base";
+
+.page {
+  @extend .row;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+.banner {
+  @extend .py-4;
+  @extend .py-md-5;
+  @extend .py-lg-6;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+  h1 {
+    @extend .mb-0;
+    @extend .pl-2;
+    @extend .pl-md-3;
+
+    text-shadow: .1rem .1rem .1rem $primary-dark;
+  }
+}

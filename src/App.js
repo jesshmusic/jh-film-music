@@ -4,16 +4,19 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Home from "./pages/Home";
+
+import Pages from "./data-pages";
+import Page from "./pages/Page";
 import NavBar from "./components/NavBar";
-import About from "./pages/About";
 import Footer from "./components/Footer";
+import ContactForm from "./components/Contact";
 
 const App = () => {
   return (
     <Router>
       <NavBar />
       <Routes />
+      <ContactForm />
       <Footer />
     </Router>
   );
@@ -23,10 +26,10 @@ const Routes = () => {
   return (
     <Switch>
       <Route path="/about">
-        <About />
+        <Page pageData={Pages.aboutPage} />
       </Route>
       <Route path="/">
-        <Home />
+        <Page pageData={Pages.homePage} />
       </Route>
     </Switch>
   );

@@ -1,10 +1,13 @@
 @import "../styles/base";
 
 .container {
+  @extend .my-4;
+  @extend .my-md-5;
   @extend .px-3;
-  @extend .pt-4;
-  @extend .pb-6;
+  @extend .pb-4;
   @extend .shadow-lg;
 
   background-color: darken($body-bg, 20%);
+  border-radius: $border-radius-xl;
+  overflow: hidden;
 }
