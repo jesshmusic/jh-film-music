@@ -2,4 +2,16 @@
 
 .home {
   @extend .row;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+
+  h1 {
+    @extend .px-3;
+  }
+}
+
+.videoPlayer {
+  @extend .border-bottom;
+  @extend .border-top;
+  @extend .mb-5;
 }

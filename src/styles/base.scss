@@ -8,6 +8,24 @@
 
 @import "./bootstrap/grid";
 @import "./bootstrap/utilities";
+@import "./bootstrap/type";
 
+html {
+  font-size: 18px;
+}
 
+h1, h2, h3 {
+  letter-spacing: .05rem;
+
+  small {
+    @extend .ml-2;
+    @extend .pb-1;
+    @extend .pr-2;
+
+    color: darken($body-color, 25%);
+    border-bottom: .005rem solid lighten($primary, 20%);
+    border-right: .005rem solid lighten($primary, 20%);
+    border-bottom-right-radius: $border-radius-lg;
+  }
+}
 

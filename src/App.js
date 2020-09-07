@@ -6,7 +6,6 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import "../node_modules/video-react/dist/video-react.css";
 import Home from "./pages/Home";
 import NavBar from "./components/NavBar";
 import About from "./pages/About";
