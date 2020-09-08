@@ -48,7 +48,6 @@ const App = () => {
 }
 
 const Routes = ({posts}) => {
-  console.log(posts);
   return (
     <Switch>
       {posts.map(post =>
