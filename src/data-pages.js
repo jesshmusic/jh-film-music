@@ -1,6 +1,6 @@
 import DemoReel1Cover from './assets/images/DemoReel01Cover.jpg';
 import DemoReel2Cover from './assets/images/DemoReel02Cover.jpg';
-import jessPortrait from './assets/images/JHendricksPortrait.jpg';
+import aboutBanner from './assets/images/AboutPageBanner.jpg';
 import homeBanner from './assets/images/HomePageBanner.jpg';
 
 const Pages = {
@@ -33,7 +33,7 @@ const Pages = {
     title: 'About Jess Hendricks',
     subtitle: 'biography',
     featureImage: {
-      imageUrl: jessPortrait,
+      imageUrl: aboutBanner,
       imageAlt: 'Jess Hendricks',
     },
     videos: [
