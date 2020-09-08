@@ -27,3 +27,9 @@
     text-shadow: .1rem .1rem .1rem $primary-dark;
   }
 }
+
+.content {
+  @extend .py-4;
+  @extend .px-3;
+  @extend .p-md-5;
+}

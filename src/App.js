@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,7 +11,10 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ContactForm from "./components/Contact";
 
+const restApiUrl = process.env.NODE_ENV === 'development' ? 'https://existentialmusic.local.com/wp-json/wp/v2/film_music_page' : 'https://existentialmusic.com/wp-json/wp/v2/film_music_page'
+
 const App = () => {
+
   return (
     <Router>
       <NavBar />
@@ -23,14 +26,28 @@ const App = () => {
 }
 
 const Routes = () => {
+  const [ posts, setPosts ] = useState([]);
+  useEffect(() => {
+    async function loadPosts() {
+      const response = await fetch(restApiUrl);
+      if(!response.ok) {
+        // oups! something went wrong
+        return;
+      }
+
+      const posts = await response.json();
+      setPosts(posts);
+    }
+
+    loadPosts();
+  }, []);
   return (
     <Switch>
-      <Route path="/about">
-        <Page pageData={Pages.aboutPage} />
-      </Route>
-      <Route path="/">
-        <Page pageData={Pages.homePage} />
-      </Route>
+      {posts.map((post, index) => (
+        <Route path={post.relativeRoute} key={index}>
+          <Page pageData={post} />
+        </Route>
+      ))}
     </Switch>
   );
 }

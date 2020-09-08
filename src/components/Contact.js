@@ -55,7 +55,7 @@ class ContactForm extends Component {
         <div className={styles.contactFormContainer}>
           <h3>Get in Touch</h3>
           <Form onSubmit={this.handleSubmit.bind(this)}>
-            <FormGroup controlId="formBasicEmail">
+            <FormGroup controlid="formBasicEmail">
               <Label>Email address</Label>
               <Input
                 type="email"
@@ -65,7 +65,7 @@ class ContactForm extends Component {
                 placeholder="Enter email"
               />
             </FormGroup>
-            <FormGroup controlId="formBasicName">
+            <FormGroup controlid="formBasicName">
               <Label>Name</Label>
               <Input
                 type="text"
@@ -75,7 +75,7 @@ class ContactForm extends Component {
                 placeholder="Name"
               />
             </FormGroup>
-            <FormGroup controlId="formBasicSubject">
+            <FormGroup controlid="formBasicSubject">
               <Label>Subject</Label>
               <Input
                 type="text"
@@ -85,7 +85,7 @@ class ContactForm extends Component {
                 placeholder="Subject"
               />
             </FormGroup>
-            <FormGroup controlId="formBasicMessage">
+            <FormGroup controlid="formBasicMessage">
               <Label>Message</Label>
               <Input
                 type="textarea"
