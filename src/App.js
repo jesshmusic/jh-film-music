@@ -48,14 +48,15 @@ const App = () => {
 }
 
 const Routes = ({posts}) => {
-
+  console.log(posts);
   return (
     <Switch>
-      {posts.map((post, index) => (
-        <Route path={post.relativeRoute} key={index}>
-          <Page pageData={post} />
-        </Route>
-      ))}
+      {posts.map(post =>
+        <Route exact
+               path={post.relativeRoute}
+               key={post.id}
+               render={() => <Page pageData={post} /> } />
+      )}
     </Switch>
   );
 }
