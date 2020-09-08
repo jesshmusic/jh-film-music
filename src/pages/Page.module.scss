@@ -32,4 +32,18 @@
   @extend .py-4;
   @extend .px-3;
   @extend .p-md-5;
+
+  p {
+    @extend .mb-4;
+  }
+
+  figure {
+    @extend .figure;
+    @extend .pb-5;
+
+    figcaption {
+      @extend .pl-3;
+      margin-top: -3rem;
+    }
+  }
 }

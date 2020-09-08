@@ -8,5 +8,11 @@
 }
 
 .navbarMain {
+  @extend .d-flex;
+  @extend .justify-content-around;
+  @extend .w-100;
+}
 
+.navLink {
+  @extend .p-3;
 }

@@ -44,7 +44,7 @@ $theme-colors: map-merge(
 
 $enable-grid-classes: true;
 
-$body-bg: $c-blue;
+$body-bg: darken($c-blue, 15%);
 $body-color: $c-light;
 $link-color: lighten($c-blue, 40%);
 $link-hover-color: lighten($link-color, 20%);

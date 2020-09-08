@@ -14,19 +14,5 @@
 @import "./bootstrap/buttons";
 @import "./bootstrap/input-group";
 
-html {
-  font-size: 18px;
-}
 
-h1, h2, h3 {
-  letter-spacing: .15rem;
-
-  small {
-    @extend .d-block;
-    @extend .pb-1;
-    @extend .pr-2;
-
-    text-transform: uppercase;
-  }
-}
 
