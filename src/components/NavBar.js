@@ -9,7 +9,7 @@ const NavBar = ({posts}) => {
     <div className={styles.navbarContainer}>
       <nav className={styles.navbarMain}>
         {sortedPosts.map((post, index) => (
-          post.showInNav ? <Link to={post.relativeRoute} className={styles.navLink} key={index}>{post.navTitle}</Link> : null
+          post.showInNav && post.status === 'publish' ? <Link to={post.relativeRoute} className={styles.navLink} key={index}>{post.navTitle}</Link> : null
         ))}
       </nav>
     </div>

@@ -51,10 +51,12 @@ const Routes = ({posts}) => {
   return (
     <Switch>
       {posts.map(post =>
-        <Route exact
-               path={post.relativeRoute}
-               key={post.id}
-               render={() => <Page pageData={post} /> } />
+        post.status === 'publish' ? (
+          <Route exact
+                 path={post.relativeRoute}
+                 key={post.id}
+                 render={() => <Page pageData={post} /> } />
+        ) : null
       )}
     </Switch>
   );
