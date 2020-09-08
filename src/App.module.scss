@@ -29,7 +29,7 @@ a {
 }
 
 .app {
-  background: linear-gradient(-3deg, $dark 0%, rgba($primary-dark, .85) 50%, rgba($primary, .75) 100%), linear-gradient(90deg, $dark 0%, darken($c-green, 10%) 35%, $c-green 100%) fixed;
+  background: linear-gradient(-3deg, $dark 0%, rgba($primary-dark, .85) 50%, rgba($primary, .75) 100%) fixed, linear-gradient(90deg, $dark 0%, darken($c-green, 10%) 35%, $c-green 100%) fixed;
 }
 
 .appWrapper {
