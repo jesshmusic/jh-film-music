@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import * as emailjs from 'emailjs-com';
-import { Button, FormFeedback, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Label } from 'reactstrap';
+import { AvForm, AvGroup, AvInput, AvFeedback } from 'availity-reactstrap-validation';
 import styles from './Contact.module.scss';
+import { Tween } from "react-gsap";
 
 class ContactForm extends Component {
   state = {
@@ -33,7 +35,6 @@ class ContactForm extends Component {
       }, error => {
         this.setState({sent: false, errorMessage: error});
       });
-    this.resetForm()
   }
   resetForm() {
     if (!this.state.sent && !this.state.errorMessage) {
@@ -50,54 +51,70 @@ class ContactForm extends Component {
   }
 
   render() {
-    return (
+    return this.state.sent ? (
+      <Tween from={{ y: '100', opacity: 0}} duration={2} ease={'power2.out'}>
+        <div className={styles.contactForm}>
+          <div className={styles.contactFormContainer}>
+            <h3>Thanks for contacting me, I will respond as soon as possible.</h3>
+          </div>
+        </div>
+      </Tween>
+    ) : (
       <div className={styles.contactForm}>
         <div className={styles.contactFormContainer}>
           <h3>Get in Touch</h3>
-          <Form onSubmit={this.handleSubmit.bind(this)}>
-            <FormGroup controlid="formBasicEmail">
+          <AvForm onSubmit={this.handleSubmit.bind(this)}>
+            <AvGroup controlid="formBasicEmail">
               <Label>Email address</Label>
-              <Input
+              <AvInput
                 type="email"
                 name="email"
                 value={this.state.email}
                 onChange={this.handleChange.bind(this, 'email')}
                 placeholder="Enter email"
+                required
               />
-            </FormGroup>
-            <FormGroup controlid="formBasicName">
+              <AvFeedback>This field is required</AvFeedback>
+            </AvGroup>
+            <AvGroup controlid="formBasicName">
               <Label>Name</Label>
-              <Input
+              <AvInput
                 type="text"
                 name="name"
                 value={this.state.name}
                 onChange={this.handleChange.bind(this, 'name')}
                 placeholder="Name"
+                required
               />
-            </FormGroup>
-            <FormGroup controlid="formBasicSubject">
+              <AvFeedback>This field is required</AvFeedback>
+            </AvGroup>
+            <AvGroup controlid="formBasicSubject">
               <Label>Subject</Label>
-              <Input
+              <AvInput
                 type="text"
                 name="subject"
                 value={this.state.subject}
                 onChange={this.handleChange.bind(this, 'subject')}
                 placeholder="Subject"
+                required
               />
-            </FormGroup>
-            <FormGroup controlid="formBasicMessage">
+              <AvFeedback>This field is required</AvFeedback>
+            </AvGroup>
+            <AvGroup controlid="formBasicMessage">
               <Label>Message</Label>
-              <Input
+              <AvInput
                 type="textarea"
                 name="message"
                 value={this.state.message}
                 onChange={this.handleChange.bind(this, 'message')}
+                required
               />
-            </FormGroup>
+              <AvFeedback>This field is required</AvFeedback>
+            </AvGroup>
             <Button variant="primary" type="submit">
               Submit
             </Button>
-          </Form>
+          </AvForm>
         </div>
       </div>
     )
