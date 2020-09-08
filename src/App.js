@@ -32,6 +32,9 @@ const App = () => {
 
     loadPosts();
   }, []);
+
+  console.log(posts);
+
   return (
     <Router>
       <div className={styles.app}>
