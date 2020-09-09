@@ -1,34 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Container from "../components/Container";
 import styles from './Page.module.scss';
 import VideoPlayer from "../components/VideoPlayer";
+import ContainerFluid from "../components/ContainerFluid";
 
-const Page = ({pageData}) => {
+const Page = ({post, posts}) => {
 
 
   return (
-    <Container>
+    <ContainerFluid posts={posts}>
       <div className={styles.page}>
-        <div className={styles.banner} style={{backgroundImage: `url('${pageData.featuredImage}')`}}>
-          <h1><span dangerouslySetInnerHTML={{__html: pageData.title.rendered}} /> <small>{pageData.subtitle}</small></h1>
+        <div className={styles.banner} style={{backgroundImage: `url('${post.featuredImage}')`}}>
+          <h1><span dangerouslySetInnerHTML={{__html: post.title.rendered}} /> <small>{post.subtitle}</small></h1>
         </div>
-        <div className={styles.content} dangerouslySetInnerHTML={{__html: pageData.content.rendered}} />
+        <div className={styles.content} dangerouslySetInnerHTML={{__html: post.content.rendered}} />
         {
-          pageData.videos.length > 0 ? (
-            pageData.videos.map((video, index) => (
+          post.videos.length > 0 ? (
+            post.videos.map((video, index) => (
               <VideoPlayer key={index} posterImage={video.posterImage} videoSourceURL={video.sourceURL} />
             ))
           ) : null
         }
 
       </div>
-    </Container>
+    </ContainerFluid>
   );
 }
 
 Page.propTypes = {
-  pageData: PropTypes.object.isRequired,
+  post: PropTypes.object.isRequired,
+  posts: PropTypes.array.isRequired,
 }
 
 export default Page;

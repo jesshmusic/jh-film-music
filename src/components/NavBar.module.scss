@@ -1,0 +1,43 @@
+@import '../styles/base';
+
+.navbarContainer {
+  @extend .p-0;
+  @extend .pb-md-4;
+  @extend .pt-md-3;
+  @extend .pr-md-3;
+  @include media-breakpoint-up(md) {
+    background: linear-gradient(180deg, rgba($c-green-dark, .85) 0%, rgba($c-green-dark, 0) 80%);
+    position: fixed;
+    right: 0;
+    top: 0;
+    max-width: inherit;
+    width: inherit;
+  }
+}
+
+.navbarMain {
+  @extend .d-sm-flex;
+  @extend .d-md-block;
+  @extend .justify-content-around;
+  @extend .w-100;
+}
+
+.navbarList {
+  @extend .d-flex;
+  @extend .d-md-block;
+  @extend .mb-0;
+  @extend .ml-0;
+  @extend .px-2;
+  list-style-type: none;
+
+  li {
+    @extend .p-2;
+    @include media-breakpoint-up(md) {
+      text-align: right;
+    }
+  }
+}
+
+.navLink {
+  font-weight: $font-weight-bold;
+}

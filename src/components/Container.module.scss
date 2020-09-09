@@ -1,13 +1,39 @@
 @import "../styles/base";
 
 .container {
-  @extend .my-4;
-  @extend .my-md-5;
   @extend .px-3;
   @extend .pb-4;
   @extend .shadow-lg;
 
   background-color: darken($body-bg, 20%);
-  border-radius: $border-radius-xl;
   overflow: hidden;
+}
+
+.containerFluid {
+  @extend .container-fluid;
+}
+
+.left {
+  @extend .col-12;
+  @extend .col-md-8;
+  @extend .col-lg-9;
+  @extend .offset-md-1;
+  @extend .pb-4;
+  @extend .px-lg-0;
+  @extend .shadow-lg;
+
+  background-color: darken($body-bg, 20%);
+  border-bottom-left-radius: $border-radius-xl;
+  border-bottom-right-radius: $border-radius-xl / 2;
+  overflow: hidden;
+}
+
+.right {
+  @extend .col-md-3;
+  @extend .col-lg-2;
+  @extend .order-md-12;
+  @extend .px-0;
+  background: linear-gradient(180deg, rgba(darken($c-green, 20%), .85) 0%, rgba(darken($c-green, 20%), 0) 100%);
+
+  position: relative;
 }

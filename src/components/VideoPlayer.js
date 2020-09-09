@@ -35,6 +35,6 @@ export default class VideoPlayer extends Component {
 }
 
 VideoPlayer.propTypes = {
-  posterImage: PropTypes.string.isRequired,
+  posterImage: PropTypes.any,
   videoSourceURL: PropTypes.string.isRequired
 }
