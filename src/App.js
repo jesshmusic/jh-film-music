@@ -9,7 +9,6 @@ import Page from "./pages/Page";
 import Footer from "./components/Footer";
 import ContactForm from "./components/Contact";
 import BackgroundImage from './assets/images/topography.svg';
-import SideBarImage from './assets/images/SidebarImage.png';
 
 import styles from './App.module.scss';
 import PropTypes from "prop-types";

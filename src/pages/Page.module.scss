@@ -1,6 +1,11 @@
 @import "../styles/base";
 
 .page {
+
+  h2 {
+    @extend .px-3;
+    @extend .px-md-5;
+  }
 }
 
 .banner {
@@ -50,4 +55,13 @@
       margin-top: -3rem;
     }
   }
+}
+
+.videos {
+  @extend .row;
+}
+
+.column {
+  @extend .col-12;
+  @extend .col-xl-4;
 }
