@@ -17,7 +17,9 @@ const Page = ({post, posts}) => (
               <h2>Videos</h2>
               <div className={styles.videos}>
               { post.videos.map((video, index) => (
-                <div key={index} className={styles.column}>
+                <div key={index} className={styles.videoColumn}>
+                  <h3>{video.title}</h3>
+                  <h4>{video.subtitle}</h4>
                   <VideoPlayer posterImage={video.posterImage} videoSourceURL={video.sourceURL} />
                 </div>
               )) }
