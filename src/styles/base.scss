@@ -16,3 +16,22 @@
 
 
 
+.border-button {
+  @extend .px-3;
+  @extend .py-2;
+  @include font-size($font-size-xs);
+
+  background: rgba($black, 0);
+  border: solid 1px $white;
+  border-radius: 0;
+  cursor: pointer;
+  letter-spacing: .1rem;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: background 350ms ease-in-out, color 350ms, ease-in-out;
+
+  &:hover {
+    background: rgba($black, 0.5);
+  }
+}
+

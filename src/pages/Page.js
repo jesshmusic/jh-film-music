@@ -6,10 +6,6 @@ import ContainerFluid from "../components/ContainerFluid";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 class Page extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     scroll.scrollToTop();
   }
@@ -17,7 +13,7 @@ class Page extends React.Component {
   render() {
     return(
       <ContainerFluid posts={ this.props.posts }>
-        <div className={ styles.page }>
+        <div className={ styles.page } id={'pageTop'}>
           <div className={ styles.banner } style={ { backgroundImage: `url('${ this.props.post.featuredImage }')` } }>
             <h1>
               <span dangerouslySetInnerHTML={ { __html: this.props.post.title.rendered } }/> <small>{ this.props.post.subtitle }</small>

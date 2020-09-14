@@ -4,6 +4,7 @@ import { Button, Label } from 'reactstrap';
 import { AvForm, AvGroup, AvInput, AvFeedback } from 'availity-reactstrap-validation';
 import styles from './Contact.module.scss';
 import { Tween } from "react-gsap";
+import { Link } from "react-scroll";
 
 class ContactForm extends Component {
   state = {
@@ -111,10 +112,13 @@ class ContactForm extends Component {
               />
               <AvFeedback>This field is required</AvFeedback>
             </AvGroup>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" className={'border-button'}>
               Submit
             </Button>
           </AvForm>
+        </div>
+        <div className={styles.topLink}>
+          <Link to={ 'pageTop' } smooth={true}>Back to top</Link>
         </div>
       </div>
     )

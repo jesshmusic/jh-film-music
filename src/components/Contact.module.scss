@@ -2,7 +2,8 @@
 
 .contactForm {
   @extend .container;
-  @extend .py-6;
+  @extend .pb-4;
+  @extend .pt-5;
 
   h3 {
     @extend .mb-2;
@@ -11,6 +12,17 @@
   input,
   textarea {
     @extend .text-primary;
+  }
+}
+
+.topLink {
+  @extend .mt-4;
+  @extend .py-2;
+
+  text-align: center;
+
+  a {
+    @extend .border-button;
   }
 }
 

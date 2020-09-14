@@ -22,7 +22,7 @@
   width: 100%;
 
   h1 {
-    @extend .mb-0;
+    @extend .mb-3;
     @extend .pl-2;
     @extend .pl-md-3;
 
@@ -36,20 +36,7 @@
   text-align: center;
 
   a {
-    @extend .px-3;
-    @extend .py-1;
-    @include font-size($font-size-sm);
-
-    background: rgba($black, 0);
-    border: solid 1px $white;
-    cursor: pointer;
-    letter-spacing: .03rem;
-    text-transform: uppercase;
-    transition: background 350ms ease-in-out, color 350ms, ease-in-out;
-
-    &:hover {
-      background: rgba($black, 0.5);
-    }
+    @extend .border-button;
   }
 }
 
