@@ -1,0 +1,18 @@
+@import "base";
+
+.wp-block-columns {
+  @extend .row;
+
+  .wp-block-column {
+    @extend .col-12;
+    @extend .col-md-6;
+  }
+}
+
+.wp-block-image {
+  @extend .figure;
+
+  img {
+    @extend .img-fluid;
+  }
+}

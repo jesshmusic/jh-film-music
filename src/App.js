@@ -11,6 +11,7 @@ import ContactForm from "./components/Contact";
 import BackgroundImage from './assets/images/topography.svg';
 
 import styles from './App.module.scss';
+import './styles/default.scss';
 import PropTypes from "prop-types";
 
 const restApiUrl = 'https://existentialmusic.com/wp-json/wp/v2/film_music_page';

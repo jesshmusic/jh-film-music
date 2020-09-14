@@ -14,7 +14,7 @@ const Page = ({post, posts}) => (
         {
           post.videos.length > 0 ? (
             <div>
-              <h2>Videos</h2>
+              <h2 className={styles.videoHeading}>Videos</h2>
               <div className={styles.videos}>
               { post.videos.map((video, index) => (
                 <div key={index} className={styles.videoColumn}>
