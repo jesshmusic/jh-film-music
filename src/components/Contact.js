@@ -60,7 +60,7 @@ class ContactForm extends Component {
         </div>
       </Tween>
     ) : (
-      <div className={styles.contactForm}>
+      <div className={styles.contactForm} id={'contactForm'}>
         <div className={styles.contactFormContainer}>
           <h3>Get in Touch</h3>
           <AvForm onSubmit={this.handleSubmit.bind(this)}>

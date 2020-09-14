@@ -30,6 +30,29 @@
   }
 }
 
+.contactLink {
+  @extend .py-2;
+
+  text-align: center;
+
+  a {
+    @extend .px-3;
+    @extend .py-1;
+    @include font-size($font-size-sm);
+
+    background: rgba($black, 0);
+    border: solid 1px $white;
+    cursor: pointer;
+    letter-spacing: .03rem;
+    text-transform: uppercase;
+    transition: background 350ms ease-in-out, color 350ms, ease-in-out;
+
+    &:hover {
+      background: rgba($black, 0.5);
+    }
+  }
+}
+
 .content {
   @extend .py-4;
   @extend .px-3;
