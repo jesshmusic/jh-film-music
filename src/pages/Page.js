@@ -39,6 +39,38 @@ class Page extends React.Component {
               </div>
             ) : null
           }
+          {
+            this.props.post.recordings && this.props.post.recordings.length > 0 ? (
+              <div className={styles.recordingContainer}>
+                <h2>Recordings</h2>
+                { this.props.post.recordings.map( ( recording, index ) => (
+                  <div key={ index } className={styles.recording}>
+                    <div className={styles.recordingTitle}>
+                      <h3>{ recording.album_title }</h3>
+                    </div>
+                    {recording.bandcamp_embed ? (
+                      <div className={styles.recordingEmbedColumn}>
+                        <h4>BandCamp</h4>
+                        <div dangerouslySetInnerHTML={ { __html: recording.bandcamp_embed }}/>
+                      </div>
+                    ) : null}
+                    {recording.apple_music_embed ? (
+                      <div className={styles.recordingEmbedColumn}>
+                        <h4>Apple Music</h4>
+                        <div dangerouslySetInnerHTML={ { __html: recording.apple_music_embed }}/>
+                      </div>
+                    ) : null}
+                    {recording.spotify_embed ? (
+                      <div className={styles.recordingEmbedColumn}>
+                        <h4>Spotify</h4>
+                        <div dangerouslySetInnerHTML={ { __html: recording.spotify_embed }}/>
+                      </div>
+                    ) : null}
+                  </div>
+                ) ) }
+              </div>
+            ) : null
+          }
         </div>
       </ContainerFluid>
     )

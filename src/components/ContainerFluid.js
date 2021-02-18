@@ -11,7 +11,7 @@ const ContainerFluid = ({ children, posts }) => {
             <div className={styles.right}>
               <NavBar posts={posts} />
             </div>
-            <Tween from={{ x: '75%', opacity: 0, boxShadow: '0 0 0 rgba(0, 0, 0, 0)'}} duration={2} ease={'power2.inout'}>
+            <Tween from={{ opacity: 0, boxShadow: '0 0 0 rgba(0, 0, 0, 0)'}} duration={2} ease={'power2.inout'}>
               <div className={styles.left}>
                 { children }
               </div>

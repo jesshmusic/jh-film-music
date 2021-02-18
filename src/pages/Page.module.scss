@@ -90,3 +90,39 @@
     @include font-size($font-size-sm);
   }
 }
+
+.recordingContainer {
+  @extend .col;
+  @extend .py-0;
+  @extend .px-3;
+  @extend .px-md-5;
+  @extend .m-0;
+}
+
+.recording {
+  @extend .py-3;
+  @extend .row;
+}
+
+.recordingTitle {
+  @extend .col-12;
+
+  border-top: .025rem solid darken($c-light, 25%);
+
+  h3 {
+    @extend .pt-3;
+    @include font-size($font-size-base);
+  }
+}
+
+.recordingEmbedColumn {
+  @extend .col-12;
+  @extend .col-lg-6;
+  @extend .col-xl-4;
+
+  h4 {
+    @extend .py-2;
+    @extend .m-0;
+    @include font-size($font-size-sm);
+  }
+}

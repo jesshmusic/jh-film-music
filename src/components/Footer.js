@@ -15,7 +15,16 @@ const Footer = () => {
             </address>
           </div>
           <div className={styles.col}>
-
+            <div>
+              <iframe
+                scrolling="no"
+                style={ {
+                  border: 0,
+                  width: '100%',
+                  height: '33px',
+                }}
+                src="https://bandcamp.com/band_follow_button_classic/1755892822"/>
+            </div>
           </div>
         </div>
       </div>

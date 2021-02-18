@@ -15,6 +15,7 @@ import './styles/default.scss';
 import PropTypes from "prop-types";
 
 const restApiUrl = 'https://existentialmusic.com/wp-json/wp/v2/film_music_page';
+// const restApiUrl = 'https://existentialmusic.local.com/wp-json/wp/v2/film_music_page';
 
 const App = () => {
   const [ posts, setPosts ] = useState([]);
@@ -22,10 +23,9 @@ const App = () => {
     async function loadPosts() {
       const response = await fetch(restApiUrl);
       if(!response.ok) {
-        // oups! something went wrong
+        // oops! something went wrong
         return;
       }
-
       const posts = await response.json();
       setPosts(posts);
     }
