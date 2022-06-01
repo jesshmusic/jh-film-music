@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
+  BrowserRouter,
+  Routes,
+  Route
 } from "react-router-dom";
-
+import { ReactQueryDevtools } from 'react-query/devtools'
 import Page from "./pages/Page";
 import Footer from "./components/Footer";
 import ContactForm from "./components/Contact";
@@ -13,54 +13,62 @@ import BackgroundImage from './assets/images/topography.svg';
 import styles from './App.module.scss';
 import './styles/default.scss';
 import PropTypes from "prop-types";
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 
 const restApiUrl = 'https://existentialmusic.com/wp-json/wp/v2/film_music_page';
 // const restApiUrl = 'https://existentialmusic.local.com/wp-json/wp/v2/film_music_page';
 
-const App = () => {
-  const [ posts, setPosts ] = useState([]);
-  useEffect(() => {
-    async function loadPosts() {
-      const response = await fetch(restApiUrl);
-      if(!response.ok) {
-        // oops! something went wrong
-        return;
-      }
-      const posts = await response.json();
-      setPosts(posts);
-    }
+const queryClient = new QueryClient()
 
-    loadPosts();
-  }, []);
+const App = () => {
 
   return (
-    <Router>
+    <QueryClientProvider client={queryClient}>
+      <Pages />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  );
+}
+
+const Pages = () => {
+
+  // Queries
+  const query = useQuery('posts', async () => {
+    const response = await fetch(restApiUrl);
+    return response.json();
+  });
+  if (query.isLoading) {
+    return <span>Loading...</span>
+  }
+
+  if (query.isError) {
+    return <span>Error: {query.error.message}</span>
+  }
+
+  return (
+    <>
       <ScrollToTop />
       <div className={styles.app}>
         <div className={styles.appSideBG}>
           <div style={{backgroundImage: `url(${BackgroundImage})`}} className={styles.appWrapper}>
-            <Routes posts={posts} />
+            <BrowserRouter>
+              <Routes>
+                {query.data.map(post =>
+                  post.status === 'publish' ? (
+                    <Route exact
+                           path={post.relativeRoute}
+                           key={post.id}
+                           element={<Page post={post} posts={query.data} />} />
+                  ) : null
+                )}
+              </Routes>
+            </BrowserRouter>
             <ContactForm />
             <Footer />
           </div>
         </div>
       </div>
-    </Router>
-  );
-}
-
-const Routes = ({posts}) => {
-  return (
-    <Switch>
-      {posts.map(post =>
-        post.status === 'publish' ? (
-          <Route exact
-                 path={post.relativeRoute}
-                 key={post.id}
-                 render={() => <Page post={post} posts={posts} /> } />
-        ) : null
-      )}
-    </Switch>
+    </>
   );
 }
 

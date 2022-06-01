@@ -83,11 +83,16 @@
   }
 
   h3 {
-    @include font-size($font-size-lg);
+    @include font-size($font-size-lg * 0.8);
+    letter-spacing: 0.05rem;
   }
 
   h4 {
-    @include font-size($font-size-sm);
+    @include font-size($font-size-sm * 0.8);
+  }
+
+  .videoSubheading {
+    height: 6rem;
   }
 }
 

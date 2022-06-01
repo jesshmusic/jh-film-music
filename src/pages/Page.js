@@ -8,6 +8,7 @@ import { Link, animateScroll as scroll } from "react-scroll";
 class Page extends React.Component {
   componentDidMount() {
     scroll.scrollToTop();
+    console.log(this.props.post)
   }
 
   render() {
@@ -30,8 +31,10 @@ class Page extends React.Component {
                 <div className={ styles.videos }>
                   { this.props.post.videos.map( ( video, index ) => (
                     <div key={ index } className={ styles.videoColumn }>
-                      <h3>{ video.title }</h3>
-                      <h4>{ video.subtitle }</h4>
+                      <div className={styles.videoSubheading}>
+                        <h3>{ video.title }</h3>
+                        <h4>{ video.subtitle }</h4>
+                      </div>
                       <VideoPlayer posterImage={ video.posterImage } videoSourceURL={ video.sourceURL }/>
                     </div>
                   ) ) }
